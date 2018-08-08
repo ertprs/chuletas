@@ -1,8 +1,6 @@
-    $P$BowRVQ7v67auZFOkv9WRcrdZDTbFgL/
-    RECUPERAR CONTRASEÑA
-    temporal
- **************************************************************************
- **************************************************************************
+<?php 
+/**
+ *RECUPERAR CONTRASEÑA 
  */
-/*
-<?php 	
+ 	$P$BowRVQ7v67auZFOkv9WRcrdZDTbFgL
+    temporal
