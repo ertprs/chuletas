@@ -6,5 +6,5 @@ emmet
 sass
 sidebarenhancements
 wordpress
-c olor picker
+color picker
 
