@@ -1,10 +1,9 @@
 <?php 
 
-/*
-**************************************************************************
-   AGREGAR CIUDADES EN WOOCOMMERCE
-**************************************************************************
-*/
+/**
+ * AGREGAR CIUDADES EN WOOCOMMERCE 
+ */
+  
 
     function uno_a_cambiar_estados( $states ) 
     {

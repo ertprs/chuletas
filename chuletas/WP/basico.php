@@ -1,16 +1,13 @@
 <?php 
-/*
-**************************************************************************
-   BORRAR BARRA ADMIN
-**************************************************************************
-*/
+/**
+ *BORRAR BARRA ADMIN 
+ */
    add_filter('show_admin_bar','__return_false' );
 
-/*
-**************************************************************************
-   REMOVER "AÑADIR NUEVA" PAGINA DEL DASHBOARD
-**************************************************************************
-*/
+/**
+ *REMOVER "AÑADIR NUEVA" PAGINA DEL DASHBOARD 
+ */
+  
   add_action('admin_init','capb_mod');
   add_action('admin_menu','men_mod');
   add_action('admin_head','hide_anbu');
@@ -75,19 +72,17 @@
   // call the function to modify the menu when the admin menu is drawn
   add_action('admin_menu','modify_menu'); 
    
-  /*
-**************************************************************************
-   REMOVER MENSAJE DE BIENVENIDA EN DASHBOARD WP
-**************************************************************************
-*/
+/**
+ *REMOVER MENSAJE DE BIENVENIDA EN DASHBOARD WP 
+ */
+  
       remove_action('welcome_panel', 'wp_welcome_panel'); 
 
 
-/*
-**************************************************************************
-   REMOVER ADD NEW BUTTON PAGE
-**************************************************************************
-*/
+/**
+ *REMOVER ADD NEW BUTTON PAGE 
+ */
+  
    
   if(! function_exists('uno_a_removing_add_new_button'))
   {
@@ -106,11 +101,11 @@
 
   }
   add_action('admin_head','uno_a_removing_add_new_button');
-/*
- **************************************************************************
-    BORRAR BASURA DEL HEAD
- **************************************************************************
+
+/**
+ *BORRAR BASURA DEL HEAD 
  */
+  
     remove_action('wp_head', 'rsd_link');
     remove_action('wp_head', 'wp_generator');
     remove_action('wp_head', 'feed_links', 2);
@@ -121,11 +116,10 @@
     remove_action('wp_head', 'parent_post_rel_link', 10, 0);
     remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
-/*
-**************************************************************************
-   REMOVER WIDGETS DE WP DASHBOARD
-**************************************************************************
-*/
+/**
+ *REMOVER WIDGETS DE WP DASHBOARD 
+ */
+  
 
   function disable_default_dashboard_widgets() 
   {
@@ -143,11 +137,10 @@
   }
   add_action('admin_menu', 'disable_default_dashboard_widgets');
 
-/*
-**************************************************************************
-   REMOVER ITEMS DEL MENU DE ADINISTRACION SEGÚN USUARIO
-**************************************************************************
-*/
+/**
+ * REMOVER ITEMS DEL MENU DE ADINISTRACION SEGÚN USUARIO 
+ */
+  
         
        function uno_a_remove_menus () 
         {
@@ -193,11 +186,10 @@
        <?php } }
         add_action('admin_menu', 'uno_a_remove_menus');
 
-/*
-**************************************************************************
-   CAMBIAR LOGO EN LOGIN
-**************************************************************************
-*/
+/**
+ *CAMBIAR LOGO EN LOGIN 
+ */
+  
  function uno_a_custom_logo_on_login() {
      
      $logo = get_bloginfo( 'template_directory' ) . '/images/logo1a.png';
@@ -317,43 +309,39 @@
    <?php }
    add_action( 'login_head', 'uno_a_custom_logo_on_login' );
 
-/*
-**************************************************************************
-   PERSONALIZAR MENSAJE DE DATOS INCORRECTOS EN LOGIN FORM
-**************************************************************************
-*/
+/**
+ * PERSONALIZAR MENSAJE DE DATOS INCORRECTOS EN LOGIN FORM 
+ */
+  
    function uno_a_login_error_override()
    {
        return 'Datos de Acceso Incorrectos';
    }
    add_filter('login_errors', 'uno_a_login_error_override');
-/*
-**************************************************************************
- CAMBIAR TITLE EN LOGO DE LOGIN PAGE
-**************************************************************************
-*/
+/**
+ *CAMBIAR TITLE EN LOGO DE LOGIN PAGE 
+ */
+  
   function uno_a_login_logo_url_title() 
   {
     return 'Desarrollo Web UNO A - Soluciones Efectivas';
   }
   add_filter( 'login_headertitle', 'uno_a_login_logo_url_title' );
 
- /*
- **************************************************************************
-    BRRANDING EN PIE DE ESCITORIO WP
- **************************************************************************
+/**
+ *BRRANDING EN PIE DE ESCITORIO WP 
  */
+  
     function uno_a_custom_text_in_footer_admin()
     {
       $uno = '<a href="http://www.paginasweb1a.com">Diseño Web Uno A - Soluciones Efectivas </a>';
       return $uno;
     }
     add_action( 'admin_footer_text', 'uno_a_custom_text_in_footer_admin' );
-/*
-**************************************************************************
-   BRANDING EN BARRA ADMIN WP
-**************************************************************************
-*/
+/**
+ *BRANDING EN BARRA ADMIN WP 
+ */
+  
     if (!function_exists("uno_a_add_item_in_admin_bar")) 
     {
     

@@ -7,4 +7,5 @@ sass
 sidebarenhancements
 wordpress
 color picker
+seti ui
 
