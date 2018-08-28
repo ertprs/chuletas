@@ -1,0 +1,32 @@
+# proteccion config.php
+<files wp-config.php>
+order allow,deny
+deny from all
+</files>
+# Protege install.php
+<Files install.php>
+ order allow,Deny
+ Deny from all
+ Satisfy all
+</files>
+# proteger htacces
+<Files ~"^.*\.([Hh][Tt][Aa])">
+order allow,Deny
+ Deny from all
+ Satisfy all
+</files>
+# proteger htacces
+<Files ~"^.*\.([Hh][Tt][Aa])">
+order allow,Deny
+ Deny from all
+ Satisfy all
+</files>
+
+#PASAR DE HTTP A HTTP2
+# Nota. Descomentar las 3 lineas inferiores borrando el caracter "#" para que haga efecto. 
+
+#RewriteEngine on
+#RewriteCond %{HTTPS} !=on
+#RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+#END Todo el trafico de http a https
