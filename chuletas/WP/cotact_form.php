@@ -31,7 +31,7 @@
  */
   to : info@bogotawebcompany.com
   from : [your-name] <info@bogotawebcompany.com>
-  subject: Mensaje de N0OMBRE DE LA EMPRESA
+  subject: Mensaje de NOMBRE DE LA EMPRESA
   aditional headers : Reply-To: [your-email]
 
   cuerpo del mensaje : 
@@ -44,3 +44,19 @@
 
   -- 
   Este mensaje se ha enviado desde un formulario de contacto en Muebles 1 Mayo (https://muebles1mayo.webhch.com/)
+
+/**
+ * CORREO  2
+ */
+  to : [your-email]
+  from : Bogota Web Company <info@bogotawebcompany.com>
+  subject: Mensaje de N0MBRE DE LA EMPRESA
+  aditional headers : Reply-To: <info@bogotawebcompany.com>
+
+  cuerpo del mensaje : 
+       Hola <b> [your-name]</b>,
+
+	    Cordial saludo. Te agradecemos que te hayas comunicado con nosotros. A la mayor brevedad posible uno de nuestros asesores se pondrá en contacto contigo a través de este correo, o al número [tel-934] para conocer un poco más de la idea o proyecto que tienes en mente.
+
+	    Atentamente,
+	    El Departamento de atención al cliente <a href="https://bogotawebcompany.com/" style="text-decoration:none;"><span style="color:#0066f9"> BOGOTA WEB COMPANY</span></a>.
