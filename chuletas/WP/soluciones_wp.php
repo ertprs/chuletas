@@ -16,3 +16,10 @@
 		add_action('','bwc_activation_add_log' );
 	}
 	register_activation_hook( __FILE__, 'bwc_activation_add_log' );
+/**
+ * DETECTAR ERRORES (VA EN EL WOP-CONFIG)
+ */
+define('WP_DEBUG_LOG', true);
+define('WP_DEBUG_DISPLAY', true);
+define('SAVEQUERIES', true);
+  

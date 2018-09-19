@@ -83,20 +83,32 @@
 **************************************************************************
 */
    
-function uno_a_ocultar_metodos_cuando_hay_gratis( $rates ) 
-{
-    $free = array();
-    foreach ( $rates as $rate_id => $rate ) 
-    {
-        if ( 'free_shipping' === $rate->method_id ) 
-        {
-            $free[ $rate_id ] = $rate;
-            break;
-        }
+
+function hide_shipping_when_free_is_available( $rates, $package ) {
+  $new_rates = array();
+  foreach ( $rates as $rate_id => $rate ) {
+    // Only modify rates if free_shipping is present.
+    if ( 'free_shipping' === $rate->method_id ) {
+      $new_rates[ $rate_id ] = $rate;
+      break;
     }
-    return ! empty( $free ) ? $free : $rates;
+  }
+
+  if ( ! empty( $new_rates ) ) {
+    //Save local pickup if it's present.
+    foreach ( $rates as $rate_id => $rate ) {
+      if ('local_pickup' === $rate->method_id ) {
+        $new_rates[ $rate_id ] = $rate;
+        break;
+      }
+    }
+    return $new_rates;
+  }
+
+  return $rates;
 }
-add_filter( 'woocommerce_package_rates', 'uno_a_ocultar_metodos_cuando_hay_gratis', 100 );
+
+add_filter( 'woocommerce_package_rates', 'hide_shipping_when_free_is_available', 10, 2 );
 /*
 **************************************************************************
    SUBTITULOS EN PRODUCTOS
